@@ -7,3 +7,8 @@ function split(arr) {
 	halfTwo = arr.slice(half, arr.length)
 	return [halfOne, halfTwo]
 }
+
+function merge(arr1, arr2) {
+
+  return arr1.concat(arr2)
+}
