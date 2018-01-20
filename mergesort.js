@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 function split(arr) {
 	var halfOne;
 	var halfTwo;
@@ -8,7 +10,30 @@ function split(arr) {
 	return [halfOne, halfTwo]
 }
 
-function merge(arr1, arr2) {
 
-  return arr1.concat(arr2)
+function merge(arr1, arr2) {
+	var finalArray = []
+  var left = arr1[0]
+  var right = arr2[0]
+  if (left < right) {
+    finalArray.push(left)
+    if (arr1.slice(1).length) {
+      finalArray = finalArray.concat(merge(arr1.slice(1), arr2))
+    } else {
+      finalArray = finalArray.concat(arr2)
+    }
+  }
+  else {
+    finalArray.push(right)
+    if (arr2.slice(1).length) {
+      finalArray = finalArray.concat(merge(arr1, arr2.slice(1)))
+    } else {
+      finalArray = finalArray.concat(arr1)
+    }
+  }
+	return finalArray
+}
+
+function mergeSort(arr) {
+  return merge(split(arr))
 }

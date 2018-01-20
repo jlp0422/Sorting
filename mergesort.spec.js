@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 describe('Split Array function', function() {
   it('is able to split an array into two halves', function() {
     expect( split( [2, 6, 8, 4] )).toEqual( [[2, 6], [8, 4]] )
@@ -13,5 +15,11 @@ describe('Split Array function', function() {
 describe('Merge function', function(){
   it('is able to merge two sorted arrays into one sorted array', function(){
     expect( merge([2, 4, 5], [3, 6, 8])).toEqual([2, 3, 4, 5, 6, 8])
+  });
+});
+
+describe('MergeSort function', function(){
+  it('is able to take one unsorted array, and return sorted array', function(){
+    expect( merge([2, 4, 5, 3, 6, 8])).toEqual([2, 3, 4, 5, 6, 8])
   });
 });
